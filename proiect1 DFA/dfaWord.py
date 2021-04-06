@@ -2,8 +2,6 @@ import dfaReader
 
 states, inputs, transitions, initial_state, final_states, words_list = dfaReader.dfaReader("input.txt")
 
-print(transitions)
-
 # codul devine un spaghetti, deci o sa l comentez cat de mult pot
 for word in words_list:
     # traseul e lista de noduri pe care o vom afisa
@@ -29,7 +27,11 @@ for word in words_list:
                 if current_state in final_states:
                     # e ok, putem afisa
                     print("DA")
-                    print(traseu)
+                    stringPrint = ""
+                    for nod in traseu:
+                        stringPrint += nod
+                        stringPrint += ' '
+                    print(stringPrint)
                     break
                 else:
                     break
